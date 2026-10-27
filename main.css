@@ -167,7 +167,6 @@ a:focus-visible {
 .camp-card-top,
 .photo-note,
 .visual-index,
-.hero-caption,
 .availability-note,
 .copyright {
   font-size: 9px;
@@ -223,6 +222,19 @@ h2 em {
   line-height: 1.8;
 }
 
+.hero-coaches {
+  margin: -15px 0 25px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -232,6 +244,7 @@ h2 em {
   padding: 15px 18px;
   font-size: 11px;
   font-weight: 600;
+  opacity: 1;
   transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 
@@ -248,15 +261,14 @@ h2 em {
   background: #fff;
 }
 
-.hero-caption {
-  position: absolute;
-  right: 7.2%;
-  bottom: 28px;
-  left: 7.2%;
-  display: flex;
-  justify-content: space-between;
-  color: rgba(255, 255, 255, .72);
-  font-size: 8px;
+.button-outline {
+  border: 1px solid var(--cream);
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.button-outline:hover {
+  background: #fff;
 }
 
 .hero-stamp {
@@ -367,6 +379,12 @@ h2 em {
   gap: 22px;
 }
 
+.approach-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
 .stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -382,12 +400,6 @@ h2 em {
   color: #656e63;
   font-size: 10px;
   line-height: 1.7;
-}
-
-.stat-number {
-  color: var(--moss);
-  font: 500 21px var(--display);
-  letter-spacing: -.06em;
 }
 
 .camp-section {
@@ -542,6 +554,71 @@ h2 em {
   padding-bottom: 112px;
 }
 
+.training-section {
+  padding: 78px 0 86px;
+  background: var(--paper);
+}
+
+.training-grid {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 9%;
+  align-items: center;
+  padding-top: 42px;
+}
+
+.training-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font: 500 clamp(43px, 5.2vw, 65px)/1.04 var(--display);
+  letter-spacing: -.07em;
+}
+
+.training-heading h2 em {
+  color: var(--forest);
+  font-family: var(--serif);
+  font-weight: 400;
+}
+
+.training-copy {
+  max-width: 430px;
+}
+
+.training-copy p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.training-cta {
+  margin-top: 8px;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.training-cta:hover {
+  background: #fff;
+}
+
+.training-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 48px;
+  border-top: 1px solid #d3d2c5;
+}
+
+.training-points > div {
+  padding: 17px 12px 0 0;
+}
+
+.training-points p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+}
+
 .coaching-grid {
   display: grid;
   grid-template-columns: 1.15fr .85fr;
@@ -585,7 +662,7 @@ h2 em {
 
 .feature-list strong {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   font: 600 12px var(--display);
 }
 
@@ -594,6 +671,10 @@ h2 em {
   color: var(--muted);
   font-size: 10px;
   line-height: 1.65;
+}
+
+.schedule-session + .schedule-session {
+  margin-top: 12px;
 }
 
 .coach-panel {
@@ -634,12 +715,6 @@ h2 em {
   gap: 18px;
   padding: 17px 0;
   border-bottom: 1px solid #d3d2c5;
-}
-
-.coach-entry span {
-  color: var(--moss);
-  font-size: 9px;
-  font-weight: 700;
 }
 
 .coach-details {
@@ -960,13 +1035,6 @@ h2 em {
     width: 90px;
   }
 
-  .hero-caption {
-    right: 8%;
-    left: 8%;
-    bottom: 21px;
-    font-size: 7px;
-  }
-
   .section-wrap {
     width: 84%;
   }
@@ -981,6 +1049,30 @@ h2 em {
     grid-template-columns: 1fr;
     gap: 26px;
     padding-top: 36px;
+  }
+
+  .training-section {
+    padding: 68px 0 70px;
+  }
+
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 36px;
+  }
+
+  .training-heading h2 {
+    font-size: clamp(45px, 11vw, 64px);
+  }
+
+  .training-points {
+    grid-template-columns: 1fr;
+    margin-top: 31px;
+  }
+
+  .training-points > div {
+    padding: 13px 0;
+    border-bottom: 1px solid #d3d2c5;
   }
 
   .intro h2,
@@ -1001,12 +1093,6 @@ h2 em {
     display: block;
     padding-top: 14px;
     font-size: 9px;
-  }
-
-  .stat-number {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 19px;
   }
 
   .camp-section {
