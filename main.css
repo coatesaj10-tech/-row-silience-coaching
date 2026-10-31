@@ -160,7 +160,7 @@ a:focus-visible {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(rgba(245, 243, 235, .82), rgba(245, 243, 235, .82));
+  background: linear-gradient(rgba(245, 243, 235, .76), rgba(245, 243, 235, .76));
   content: "";
   pointer-events: none;
 }
@@ -352,7 +352,7 @@ h2 em {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: rgba(245, 243, 235, .90);
+  background: rgba(245, 243, 235, .87);
   content: "";
   pointer-events: none;
 }
@@ -508,8 +508,8 @@ h2 em {
 .camp-heading > p {
   max-width: 470px;
   margin: 0 0 8px;
-  color: rgba(245, 243, 235, .7);
-  font-size: 14px;
+  color: rgba(245, 243, 235, .9);
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -593,8 +593,8 @@ h2 em {
 .camp-card-body > p {
   min-height: 0;
   margin-bottom: 25px;
-  color: rgba(245, 243, 235, .66);
-  font-size: 12px;
+  color: rgba(245, 243, 235, .9);
+  font-size: 15px;
   line-height: 1.85;
 }
 
@@ -626,7 +626,7 @@ h2 em {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: rgba(233, 231, 220, .90);
+  background: rgba(233, 231, 220, .87);
   content: "";
   pointer-events: none;
 }
@@ -716,8 +716,8 @@ h2 em {
 
 .plans-intro > p {
   max-width: 580px;
-  color: var(--muted);
-  font-size: 16px;
+  color: #000;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -754,8 +754,8 @@ h2 em {
 .plan-card > p:not(:first-child) {
   max-width: 460px;
   margin-bottom: 28px;
-  color: var(--muted);
-  font-size: 14px;
+  color: #000;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -813,8 +813,8 @@ h2 em {
 .coaching-copy > p {
   max-width: 415px;
   margin: 23px 0 29px;
-  color: var(--muted);
-  font-size: 14px;
+  color: #000;
+  font-size: 15px;
   line-height: 1.9;
 }
 
@@ -847,8 +847,8 @@ h2 em {
 
 .feature-list p {
   margin: 0;
-  color: var(--muted);
-  font-size: 12px;
+  color: #000;
+  font-size: 15px;
   line-height: 1.65;
 }
 
@@ -911,8 +911,8 @@ h2 em {
 .coach-details p,
 .coach-entry > p {
   margin: 0;
-  color: var(--muted);
-  font-size: 12px;
+  color: #000;
+  font-size: 15px;
   line-height: 1.75;
 }
 
@@ -1178,15 +1178,15 @@ h2 em {
   }
 
   .hero::before {
-    background: linear-gradient(90deg, rgba(245, 243, 235, .88), rgba(245, 243, 235, .82));
+    background: linear-gradient(90deg, rgba(245, 243, 235, .62), rgba(245, 243, 235, .56));
   }
 
   .intro::before {
-    background: rgba(245, 243, 235, .92);
+    background: rgba(245, 243, 235, .89);
   }
 
   .training-section::before {
-    background: rgba(233, 231, 220, .92);
+    background: rgba(233, 231, 220, .89);
   }
 
   .hero-background {
