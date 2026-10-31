@@ -1052,6 +1052,18 @@ h2 em {
     height: 70px;
   }
 
+  .site-header .wordmark {
+    gap: 7px;
+    font-size: clamp(16px, 5vw, 20px);
+    white-space: nowrap;
+  }
+
+  .site-header .wordmark-mark {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+  }
+
   .primary-navigation {
     position: absolute;
     top: 70px;
@@ -1156,6 +1168,10 @@ h2 em {
     font-size: 15px;
   }
 
+  .plans-intro h1 {
+    font-size: clamp(42px, 12vw, 48px);
+  }
+
   .plan-options {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1164,6 +1180,10 @@ h2 em {
   .plan-card {
     min-height: 0;
     padding: 27px 24px;
+  }
+
+  .plan-card .button {
+    min-height: 56px;
   }
 
   .training-heading h2 {
@@ -1181,9 +1201,12 @@ h2 em {
   }
 
   .intro h2,
-  .coaching-copy h1,
   .coaching-copy h2 {
-    font-size: clamp(49px, 12vw, 68px);
+    font-size: clamp(42px, 12vw, 49px);
+  }
+
+  .coaching-copy h1 {
+    font-size: clamp(40px, 12vw, 49px);
   }
 
   .large-copy {
@@ -1212,7 +1235,7 @@ h2 em {
   }
 
   .camp-heading h2 {
-    font-size: clamp(55px, 13vw, 75px);
+    font-size: clamp(46px, 13vw, 55px);
   }
 
   .camp-heading > p {
@@ -1234,6 +1257,10 @@ h2 em {
 
   .camp-card h3 {
     font-size: 34px;
+  }
+
+  .camp-card-top {
+    font-size: 8px;
   }
 
   .camp-card-body > p {
@@ -1330,6 +1357,7 @@ h2 em {
   .copyright {
     grid-column: 2;
     grid-row: 2;
+    font-size: 8px;
     text-align: right;
   }
 }
