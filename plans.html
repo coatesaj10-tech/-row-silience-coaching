@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <meta name="description" content="Explore personalised and ready-made rowing training plan options from Row-silience Coaching.">
+  <title>Training Plan Options | Row-silience Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html#top" aria-label="Row-silience home">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menu</span>
+      <span class="menu-icon" aria-hidden="true">+</span>
+    </button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="index.html#approach">Our approach</a>
+      <a href="index.html#training-plans">Training plans</a>
+      <a href="index.html#camps">The camps</a>
+      <a href="camp-details.html#coaching">Coaching</a>
+      <a class="button nav-cta" href="index.html#camps">Explore camps <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="plans-page">
+    <div class="section-wrap">
+      <div class="section-kicker"><span class="kicker-line"></span><span>TRAINING PLANS</span></div>
+      <div class="plans-intro">
+        <h1>Find a plan for<br><em>your next step.</em></h1>
+        <p>Choose a personalised plan built around your goals and schedule, or ask us about our ready-made rowing plans.</p>
+      </div>
+      <section class="plan-options" aria-label="Training plan options">
+        <article class="plan-card">
+          <p>BUILT AROUND YOU</p>
+          <h2>Personalised plan</h2>
+          <p>Work with our coaches to shape a training plan around your rowing goals, current training and schedule.</p>
+          <a class="button" href="https://tally.so/r/LDDMo1" target="_blank" rel="noopener noreferrer">Ask about a personalised plan <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="plan-card">
+          <p>READY TO GET STARTED</p>
+          <h2>Ready-made plans</h2>
+          <p>Explore our available training plans and find out which option could suit your next step in rowing.</p>
+          <a class="button" href="https://tally.so/r/LDDMo1" target="_blank" rel="noopener noreferrer">Ask about available plans <span aria-hidden="true">↗</span></a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="index.html#top">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <a class="back-to-top" href="index.html#training-plans">Back to training plans <span aria-hidden="true">↑</span></a>
+    <span class="copyright">© <span id="year"></span> Row-silience</span>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".primary-navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigation.classList.toggle("is-open", !isExpanded);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

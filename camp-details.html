@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <meta name="description" content="See what to expect at the Row-silience three-day progression camp at Eton Dorney.">
+  <title>What the Camp Entails | Row-silience Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html#top" aria-label="Row-silience home">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menu</span>
+      <span class="menu-icon" aria-hidden="true">+</span>
+    </button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="index.html#approach">Our approach</a>
+      <a href="index.html#training-plans">Training plans</a>
+      <a href="index.html#camps">The camps</a>
+      <a href="#coaching">Coaching</a>
+      <a class="button nav-cta" href="index.html#camps">Back to camps <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="coaching-section section-wrap" id="coaching">
+      <div class="section-kicker"><span class="kicker-line"></span><span>MORE THAN MILES</span></div>
+      <div class="coaching-grid">
+        <div class="coaching-copy">
+          <h1>What our camps<br><em>entail.</em></h1>
+          <p>Three days of top-level coaching, provided by our elite coaches, Holly Dunford and AJ Coates.</p>
+          <ul class="feature-list">
+            <li>
+              <span>DAY 1</span>
+              <div>
+                <div class="schedule-session">
+                  <strong>Session 1 · 08:00–09:30</strong>
+                  <p>A steady UT2 session consisting of low-intensity miles.</p>
+                </div>
+                <div class="schedule-session">
+                  <strong>Session 2 · 10:30–12:00</strong>
+                  <p>A shorter technical row focused on upskilling your rowing.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span>DAY 2</span>
+              <div>
+                <div class="schedule-session">
+                  <strong>Session 1 · 08:00–09:30</strong>
+                  <p>A steady UT2 session.</p>
+                </div>
+                <div class="schedule-session">
+                  <strong>Session 2 · 10:30–12:00</strong>
+                  <p>A shorter-mileage session with some HIIT, focusing on holding changes at rate.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <span>DAY 3</span>
+              <div>
+                <div class="schedule-session">
+                  <strong>Session 1</strong>
+                  <p>4–6 km pre-paddle.</p>
+                </div>
+                <div class="schedule-session">
+                  <strong>Session 2</strong>
+                  <p>Performance pieces.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <aside class="coach-panel" aria-labelledby="coach-heading">
+          <p class="coach-eyebrow">THE PEOPLE IN YOUR CORNER</p>
+          <h2 id="coach-heading">Meet your<br><em>coaches.</em></h2>
+          <div class="coach-list">
+            <div class="coach-entry">
+              <div class="coach-details">
+                <strong>Holly Dunford</strong>
+                <p>Holly represented Great Britain in the Women’s 8+ at the Paris Olympics, winning a bronze medal. Since then, she has won Henley Royal Regatta with Molesey while continuing to develop her coaching expertise.</p>
+              </div>
+            </div>
+            <div class="coach-entry">
+              <div class="coach-details">
+                <strong>AJ Coates</strong>
+                <p>AJ represented Great Britain in the Men’s 4− at the 2026 FISU Rowing Championships in Canada, winning a silver medal. He is keen to pass on his knowledge and expertise through coaching.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <a class="button" href="index.html#camps">Back to camp details <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="index.html#top">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <a class="back-to-top" href="index.html#camps">Back to camps <span aria-hidden="true">↑</span></a>
+    <span class="copyright">© <span id="year"></span> Row-silience</span>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".primary-navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigation.classList.toggle("is-open", !isExpanded);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
