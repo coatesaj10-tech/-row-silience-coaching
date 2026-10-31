@@ -173,8 +173,8 @@ a:focus-visible {
   overflow: hidden;
   color: var(--deep-green);
   background:
-    linear-gradient(rgba(245, 243, 235, .48), rgba(245, 243, 235, .48)),
-    url("Dorney H1.JPG") center 52% / cover no-repeat;
+    linear-gradient(rgba(245, 243, 235, .70), rgba(245, 243, 235, .70)),
+    url("Dorney1.JPG") center 52% / cover no-repeat;
 }
 
 .hero-content {
@@ -262,7 +262,7 @@ h2 em {
 
 .hero-coaches {
   margin: -15px 0 25px;
-  color: #5e6a60;
+  color: #39473d;
   font-size: 11px;
   line-height: 1.6;
 }
@@ -468,14 +468,14 @@ h2 em {
 
 .camp-grid {
   display: grid;
-  grid-template-columns: minmax(0, 900px);
+  grid-template-columns: minmax(0, 960px);
   justify-content: center;
   gap: 17px;
 }
 
 .camp-card {
   display: grid;
-  grid-template-columns: .92fr 1.08fr;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
   min-width: 0;
   background: #23453a;
 }
@@ -494,8 +494,8 @@ h2 em {
   background-position: center;
 }
 
-.camp-image-technique {
-  background-image: url("dorney-lake.jpg");
+.camp-image-dorney {
+  background-image: url("Dorney H1.JPG");
   background-position: center;
 }
 
@@ -954,6 +954,20 @@ h2 em {
   }
 }
 
+@media (max-width: 760px) {
+  .camp-card {
+    grid-template-columns: 1fr;
+  }
+
+  .camp-photo {
+    height: clamp(210px, 42vw, 285px);
+  }
+
+  .camp-image {
+    min-height: 0;
+  }
+}
+
 @media (max-width: 680px) {
   html {
     scroll-padding-top: 70px;
@@ -1001,6 +1015,9 @@ h2 em {
   .hero {
     min-height: auto;
     align-items: center;
+    background:
+      linear-gradient(90deg, rgba(245, 243, 235, .80), rgba(245, 243, 235, .68)),
+      url("Dorney1.JPG") 56% center / cover no-repeat;
   }
 
   .hero-content {
@@ -1115,16 +1132,8 @@ h2 em {
     gap: 15px;
   }
 
-  .camp-card {
-    grid-template-columns: 1fr;
-  }
-
   .camp-photo {
-    height: 240px;
-  }
-
-  .camp-image {
-    min-height: 0;
+    height: clamp(210px, 62vw, 285px);
   }
 
   .camp-card-body {
