@@ -160,7 +160,7 @@ a:focus-visible {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(rgba(245, 243, 235, .88), rgba(245, 243, 235, .88));
+  background: linear-gradient(rgba(245, 243, 235, .82), rgba(245, 243, 235, .82));
   content: "";
   pointer-events: none;
 }
@@ -170,6 +170,7 @@ a:focus-visible {
   position: absolute;
   z-index: 0;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -351,7 +352,7 @@ h2 em {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: rgba(245, 243, 235, .95);
+  background: rgba(245, 243, 235, .90);
   content: "";
   pointer-events: none;
 }
@@ -625,7 +626,7 @@ h2 em {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: rgba(233, 231, 220, .95);
+  background: rgba(233, 231, 220, .90);
   content: "";
   pointer-events: none;
 }
@@ -634,6 +635,7 @@ h2 em {
   position: absolute;
   z-index: 0;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1176,11 +1178,27 @@ h2 em {
   }
 
   .hero::before {
-    background: linear-gradient(90deg, rgba(245, 243, 235, .90), rgba(245, 243, 235, .84));
+    background: linear-gradient(90deg, rgba(245, 243, 235, .88), rgba(245, 243, 235, .82));
+  }
+
+  .intro::before {
+    background: rgba(245, 243, 235, .92);
+  }
+
+  .training-section::before {
+    background: rgba(233, 231, 220, .92);
   }
 
   .hero-background {
     object-position: 56% center;
+  }
+
+  .hero-background,
+  .intro-background,
+  .training-background {
+    display: block;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .hero-content {
