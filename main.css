@@ -1193,6 +1193,10 @@ h2 em {
     object-position: 56% center;
   }
 
+  .intro-background {
+    object-position: 88% center;
+  }
+
   .hero-background,
   .intro-background,
   .training-background {
