@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3eb">
+  <meta name="description" content="Compare Row-silience Coaching ready made rowing training plans and monthly prices.">
+  <title>Available Training Plans | Row-silience Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html#top" aria-label="Row-silience home">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menu</span>
+      <span class="menu-icon" aria-hidden="true">+</span>
+    </button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="index.html#approach">Our Approach</a>
+      <a href="index.html#training-plans">Training Plans</a>
+      <a href="index.html#camps">The Camps</a>
+    </nav>
+  </header>
+
+  <main class="plans-page">
+    <div class="section-wrap">
+      <div class="section-kicker"><span class="kicker-line"></span><span>READY MADE PLANS</span></div>
+      <div class="plans-intro">
+        <h1>Find your next<br><em>training plan.</em></h1>
+        <p>Choose from our ready made rowing programmes. Each plan is £15 per month.</p>
+      </div>
+      <table class="available-plans-table">
+        <thead>
+          <tr>
+            <th scope="col">Programme</th>
+            <th scope="col">Monthly price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><a class="available-plan-link" href="https://payhip.com/b/LYwtA" target="_blank" rel="noopener noreferrer">Junior J16+</a></td><td>£15 per month</td></tr>
+          <tr><td><a class="available-plan-link" href="https://row-silience-planpurchase.co.uk/" target="_blank" rel="noopener noreferrer">Student</a></td><td>£15 per month</td></tr>
+          <tr><td><a class="available-plan-link" href="https://row-silience-planpurchase.co.uk/" target="_blank" rel="noopener noreferrer">Club</a></td><td>£15 per month</td></tr>
+          <tr><td><a class="available-plan-link" href="https://row-silience-planpurchase.co.uk/" target="_blank" rel="noopener noreferrer">Masters</a></td><td>£15 per month</td></tr>
+          <tr><td><a class="available-plan-link" href="https://row-silience-planpurchase.co.uk/" target="_blank" rel="noopener noreferrer">BRIC</a></td><td>£15 per month</td></tr>
+          <tr><td><a class="available-plan-link" href="https://row-silience-planpurchase.co.uk/" target="_blank" rel="noopener noreferrer">Injury &amp; Return to Training</a></td><td>£15 per month</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="index.html#top">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <a class="back-to-top" href="plans.html">Back to training plan options <span aria-hidden="true">↑</span></a>
+    <span class="copyright">© <span id="year"></span> Row-silience</span>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".primary-navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigation.classList.toggle("is-open", !isExpanded);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

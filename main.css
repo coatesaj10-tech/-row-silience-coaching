@@ -764,6 +764,48 @@ h2 em {
   width: 100%;
 }
 
+.available-plans-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  color: #000;
+  font-size: 15px;
+  text-align: left;
+}
+
+.available-plans-table th,
+.available-plans-table td {
+  padding: 18px 22px;
+  border-bottom: 1px solid #d3d2c5;
+}
+
+.available-plans-table th {
+  color: var(--deep-green);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.available-plan-link {
+  color: var(--deep-green);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.available-plan-link:hover {
+  color: var(--forest);
+}
+
+.available-plans-table td:last-child {
+  white-space: nowrap;
+}
+
+.available-plans-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 .training-points {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
