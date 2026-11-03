@@ -933,24 +933,87 @@ h2 em {
   aspect-ratio: 3 / 4;
 }
 
-.about-coaching {
-  max-width: 760px;
-  padding-top: 24px;
-  border-top: 1px solid #cfdee5;
+.about-section .coach-experience {
+  position: relative;
+  display: grid;
+  isolation: isolate;
+  outline-offset: 4px;
 }
 
-.about-coaching h2 {
-  margin: 0 0 14px;
-  color: var(--ink);
-  font: 600 clamp(24px, 3vw, 32px)/1.2 var(--display);
-  letter-spacing: -.04em;
+.about-section .coach-experience > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-.about-coaching p {
-  margin: 0 0 14px;
-  color: var(--ink);
-  font-size: 15px;
-  line-height: 1.8;
+.about-section .coach-experience-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 0 0;
+  transition: opacity .2s ease;
+}
+
+.about-section .coach-experience-copy strong {
+  display: block;
+  margin-bottom: 12px;
+  font: 600 18px/1.3 var(--display);
+}
+
+.about-section .coach-experience-copy p + p {
+  margin-top: 10px;
+}
+
+.about-section .aj-profile {
+  position: relative;
+  display: grid;
+  isolation: isolate;
+  outline-offset: 4px;
+}
+
+.about-section .aj-profile > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.about-section .aj-profile-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 0 0;
+  transition: opacity .2s ease;
+}
+
+.about-section .aj-profile-copy strong {
+  display: block;
+  margin-bottom: 12px;
+  font: 600 18px/1.3 var(--display);
+}
+
+.about-section .aj-profile-copy p + p {
+  margin-top: 10px;
+}
+
+@media (hover: hover) and (min-width: 681px) {
+  .about-section .coach-experience-copy,
+  .about-section .aj-profile-copy {
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+    padding: clamp(18px, 3vw, 30px);
+    background: rgba(228, 244, 252, .96);
+    opacity: 0;
+  }
+
+  .about-section .coach-experience:hover .coach-experience-copy,
+  .about-section .coach-experience:focus .coach-experience-copy,
+  .about-section .aj-profile:hover .aj-profile-copy,
+  .about-section .aj-profile:focus .aj-profile-copy {
+    opacity: 1;
+  }
 }
 
 .about-section .camp-details-actions .button {
@@ -1385,6 +1448,19 @@ h2 em {
     scroll-padding-top: 70px;
   }
 
+  .about-page.has-coach-scroll-reveal .coach-experience-copy,
+  .about-page.has-coach-scroll-reveal .aj-profile-copy {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .35s ease, transform .35s ease;
+  }
+
+  .about-page.has-coach-scroll-reveal .coach-experience.is-visible .coach-experience-copy,
+  .about-page.has-coach-scroll-reveal .aj-profile.is-visible .aj-profile-copy {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .site-header {
     height: 70px;
   }
@@ -1690,15 +1766,31 @@ h2 em {
   }
 
   .about-section .founder-profile {
+    display: flex;
+    flex-direction: column;
     gap: 14px;
   }
 
-  .about-coaching {
-    padding-top: 20px;
+  .about-section .founder-profile img {
+    order: -1;
+    align-self: center;
+    width: min(50%, 160px);
+    height: auto;
+    aspect-ratio: 3 / 4;
   }
 
-  .about-coaching h2 {
-    font-size: 25px;
+  .about-section .founder-profile strong,
+  .about-section .founder-list > li > div > strong {
+    font-size: 15px;
+  }
+
+  .about-section .founder-list li {
+    padding: 18px 0;
+  }
+
+  .about-section .coaching-copy > h2 {
+    margin-top: 40px;
+    font-size: clamp(38px, 10vw, 46px);
   }
 
   .about-section .camp-details-actions {

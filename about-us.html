@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=20261103-camp-responsive">
+  <link rel="stylesheet" href="main.css?v=20261103-aj-experience">
   <link rel="icon" href="favicon.ico" sizes="any">
 </head>
 <body class="about-page">
@@ -43,29 +43,29 @@
           <h2>Meet your coaches</h2>
           <ul class="feature-list founder-list">
             <li>
-              <div class="founder-profile">
-                <div>
+              <div class="coach-experience" tabindex="0" role="group" aria-label="Holly Dunford's rowing experience. Scroll past the photo on mobile, or hover or focus to read more.">
+                <img src="holly-single-scull.jpg" alt="Holly Dunford rowing a single scull">
+                <div class="coach-experience-copy">
                   <strong>Holly Dunford</strong>
                   <p>Holly began her rowing journey at the age of 12 at Molesey Boat Club before earning a scholarship to row at the University of Washington.</p>
                   <p>Alongside her collegiate career, Holly continued to represent Great Britain internationally, achieving significant success at Under-23 level with a gold and silver medal respectively.</p>
                   <p>Following her graduation, Holly returned to the UK to join the Great Britain Senior team. The pinnacle of her international career came at the Paris 2024 Olympic Games, where she won an Olympic bronze medal.</p>
                   <p>Since the Games, Holly has continued to compete at the highest level, adding victory at Henley Royal Regatta to her achievements while developing her coaching expertise and passion for athlete development.</p>
                 </div>
-                <img src="holly-profile.JPG" alt="Holly Dunford carrying a rowing boat">
               </div>
             </li>
             <li>
-              <div>
-                <strong>AJ Coates</strong>
-                <p>AJ began his rowing journey as a cox at St Peter’s School, York, aged 13, before transitioning to rowing himself. He continued his development at the University of York, where he served as Men’s Captain, taking responsibility for leading the programme, overseeing training plans, organising training camps and managing its day-to-day operations.</p>
-                <p>Following graduation, AJ joined Molesey Boat Club, where he continues to compete. During his time there, he has reached multiple Henley Royal Regatta semi-finals and most recently represented Great Britain at the FISU World University Championships, securing a silver medal.</p>
-                <p>Alongside his own competitive career, AJ is passionate about coaching and helping athletes develop their technical skills, physical performance and confidence on the water. He combines his racing experience with his leadership background to support athletes in achieving their goals.</p>
+              <div class="aj-profile" tabindex="0" role="group" aria-label="AJ Coates's rowing experience. Scroll past the photo on mobile, or hover or focus to read more.">
+                <img src="AJ-FISU-2026.jpg" alt="Four British rowers competing on the water">
+                <div class="aj-profile-copy">
+                  <strong>AJ Coates</strong>
+                  <p>AJ began his rowing journey as a cox at St Peter’s School, York, aged 12, before transitioning to rowing himself. He continued his development at the University of York, where he served as Men’s Captain, taking responsibility for leading the programme, overseeing training plans, organising training camps and managing its day-to-day operations.</p>
+                  <p>Following graduation, AJ joined Molesey Boat Club, where he continues to compete. During his time there, he has reached multiple Henley Royal Regatta semi-finals and most recently represented Great Britain at the FISU World University Championships, securing a silver medal.</p>
+                  <p>Alongside his own competitive career, AJ is passionate about coaching and helping athletes develop their technical skills, physical performance and confidence on the water. He combines his racing experience with his leadership background to support athletes in achieving their goals.</p>
+                </div>
               </div>
             </li>
           </ul>
-          <section class="about-coaching" aria-labelledby="about-coaching-heading">
-            <h2 id="about-coaching-heading">About our coaching</h2>
-          </section>
           <div class="camp-details-actions">
             <a class="button" href="index.html#training-plans">Explore training plans</a>
             <a class="button" href="index.html#camps">Explore camps</a>
@@ -105,6 +105,32 @@
         navigation.classList.remove("is-open");
       }
     });
+
+    const coachExperienceMedia = window.matchMedia("(max-width: 680px)");
+    if ("IntersectionObserver" in window
+      && coachExperienceMedia.matches
+      && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.body.classList.add("has-coach-scroll-reveal");
+      const coachObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.dataset.photoSeen = "true";
+          } else if (entry.target.dataset.photoSeen === "true"
+            && entry.boundingClientRect.bottom <= (entry.rootBounds?.top ?? 0)) {
+            entry.target.closest(".coach-experience, .aj-profile").classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      document.querySelectorAll(".coach-experience > img, .aj-profile > img").forEach((photo) => {
+        if (photo.getBoundingClientRect().bottom <= 0) {
+          photo.closest(".coach-experience, .aj-profile").classList.add("is-visible");
+        } else {
+          coachObserver.observe(photo);
+        }
+      });
+    }
 
     document.querySelector("#year").textContent = new Date().getFullYear();
   </script>
