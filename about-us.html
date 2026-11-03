@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e4f4fc">
+  <meta name="description" content="Meet the Row-silience Coaching team and learn about our approach to helping rowers take their next step.">
+  <title>About Us | Row-silience Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css?v=20261103-camp-responsive">
+  <link rel="icon" href="favicon.ico" sizes="any">
+</head>
+<body class="about-page">
+  <header class="site-header">
+    <a class="wordmark" href="index.html#top" aria-label="Row-silience home">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menu</span>
+      <span class="menu-icon" aria-hidden="true">+</span>
+    </button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="index.html#approach">Our Approach</a>
+      <a href="index.html#training-plans">Training Plans</a>
+      <a href="index.html#camps">The Camps</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="coaching-section section-wrap about-section">
+      <div class="section-kicker"><span class="kicker-line"></span><span>ABOUT ROW-SILIENCE</span></div>
+      <div class="coaching-grid">
+        <div class="coaching-copy">
+          <h1>Good rowing is<br><em>built together.</em></h1>
+          <p>Row-silience Coaching helps rowers take their next step through thoughtful coaching, personalised training plans and on-water camps. We work with individuals and clubs to build skills, confidence and performance around each rower’s goals.</p>
+          <h2>Meet your coaches</h2>
+          <ul class="feature-list founder-list">
+            <li>
+              <div class="founder-profile">
+                <div>
+                  <strong>Holly Dunford</strong>
+                  <p>Holly began her rowing journey at the age of 12 at Molesey Boat Club before earning a scholarship to row at the University of Washington.</p>
+                  <p>Alongside her collegiate career, Holly continued to represent Great Britain internationally, achieving significant success at Under-23 level with a gold and silver medal respectively.</p>
+                  <p>Following her graduation, Holly returned to the UK to join the Great Britain Senior team. The pinnacle of her international career came at the Paris 2024 Olympic Games, where she won an Olympic bronze medal.</p>
+                  <p>Since the Games, Holly has continued to compete at the highest level, adding victory at Henley Royal Regatta to her achievements while developing her coaching expertise and passion for athlete development.</p>
+                </div>
+                <img src="holly-profile.JPG" alt="Holly Dunford carrying a rowing boat">
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>AJ Coates</strong>
+                <p>AJ began his rowing journey as a cox at St Peter’s School, York, aged 13, before transitioning to rowing himself. He continued his development at the University of York, where he served as Men’s Captain, taking responsibility for leading the programme, overseeing training plans, organising training camps and managing its day-to-day operations.</p>
+                <p>Following graduation, AJ joined Molesey Boat Club, where he continues to compete. During his time there, he has reached multiple Henley Royal Regatta semi-finals and most recently represented Great Britain at the FISU World University Championships, securing a silver medal.</p>
+                <p>Alongside his own competitive career, AJ is passionate about coaching and helping athletes develop their technical skills, physical performance and confidence on the water. He combines his racing experience with his leadership background to support athletes in achieving their goals.</p>
+              </div>
+            </li>
+          </ul>
+          <section class="about-coaching" aria-labelledby="about-coaching-heading">
+            <h2 id="about-coaching-heading">About our coaching</h2>
+          </section>
+          <div class="camp-details-actions">
+            <a class="button" href="index.html#training-plans">Explore training plans</a>
+            <a class="button" href="index.html#camps">Explore camps</a>
+            <a class="button" href="index.html">Back to main page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="index.html#top">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <a class="back-to-top" href="index.html#approach">Back to our approach <span aria-hidden="true">↑</span></a>
+    <span class="copyright">© <span id="year"></span> Row-silience</span>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".primary-navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigation.classList.toggle("is-open", !isExpanded);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

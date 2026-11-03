@@ -414,7 +414,7 @@ h2 em {
 .large-copy {
   margin-bottom: 14px;
   color: var(--ink);
-  font: 500 20px/1.48 var(--display);
+  font: 500 18px/1.55 var(--display);
   letter-spacing: -.035em;
 }
 
@@ -627,6 +627,39 @@ h2 em {
   padding-bottom: 112px;
 }
 
+.camp-details-section {
+  padding-top: clamp(52px, 6vw, 82px);
+  padding-bottom: 56px;
+}
+
+.camp-details-section .coaching-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+  gap: clamp(30px, 4vw, 56px);
+  padding-top: clamp(32px, 4vw, 48px);
+}
+
+.camp-details-copy h1 {
+  font-size: clamp(44px, 5.2vw, 72px);
+}
+
+.camp-details-copy > p {
+  max-width: 640px;
+  margin: 18px 0 22px;
+  line-height: 1.7;
+}
+
+.camp-details-copy > .camp-price {
+  margin: 12px 0 26px;
+}
+
+.camp-details-section .feature-list li {
+  padding: 18px 0;
+}
+
+.camp-details-section .camp-inclusions {
+  margin-top: 26px;
+}
+
 .training-section {
   position: relative;
   isolation: isolate;
@@ -740,8 +773,8 @@ h2 em {
 }
 
 .plan-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
   align-items: flex-start;
   min-height: 300px;
   padding: clamp(26px, 4vw, 44px);
@@ -771,8 +804,11 @@ h2 em {
   line-height: 1.8;
 }
 
+.plan-card > .plan-price {
+  margin-bottom: 16px;
+}
+
 .plan-card .button {
-  margin-top: auto;
   width: 100%;
 }
 
@@ -866,6 +902,61 @@ h2 em {
   font-size: clamp(44px, 5.4vw, 68px);
 }
 
+.about-section {
+  padding-top: 76px;
+  padding-bottom: 88px;
+}
+
+.about-section .coaching-grid {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 860px;
+  margin: 0 auto;
+  gap: 0;
+}
+
+.about-section .coaching-copy > p {
+  max-width: 720px;
+}
+
+.about-section .founder-list {
+  max-width: 760px;
+}
+
+.about-section .founder-profile {
+  grid-template-columns: minmax(0, 1fr) clamp(96px, 30vw, 150px);
+  gap: 22px;
+}
+
+.about-section .founder-profile img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+}
+
+.about-coaching {
+  max-width: 760px;
+  padding-top: 24px;
+  border-top: 1px solid #cfdee5;
+}
+
+.about-coaching h2 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font: 600 clamp(24px, 3vw, 32px)/1.2 var(--display);
+  letter-spacing: -.04em;
+}
+
+.about-coaching p {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.about-section .camp-details-actions .button {
+  flex: 0 1 240px;
+}
+
 .coaching-section > .button {
   margin-top: 30px;
 }
@@ -882,7 +973,7 @@ h2 em {
 }
 
 .camp-details-page {
-  padding-bottom: 80px;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
 }
 
 .sticky-book-bar {
@@ -925,11 +1016,34 @@ h2 em {
   border-top: 1px solid #cfdee5;
 }
 
+.founder-list li {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .feature-list li > span {
   padding-top: 1px;
   color: var(--moss);
   font-size: 9px;
   font-weight: 700;
+}
+
+.founder-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 72px;
+  gap: 16px;
+  align-items: start;
+}
+
+.founder-profile img {
+  display: block;
+  width: 72px;
+  height: 88px;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
+.founder-profile p + p {
+  margin-top: 10px;
 }
 
 .feature-list strong {
@@ -1255,6 +1369,17 @@ h2 em {
   }
 }
 
+@media (max-width: 960px) {
+  .camp-details-section .coaching-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .camp-details-section .coach-panel {
+    max-width: 680px;
+  }
+}
+
 @media (max-width: 680px) {
   html {
     scroll-padding-top: 70px;
@@ -1457,7 +1582,7 @@ h2 em {
   }
 
   .large-copy {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .stats-row {
@@ -1517,6 +1642,75 @@ h2 em {
   .coaching-section {
     padding-top: 74px;
     padding-bottom: 76px;
+  }
+
+  .camp-details-section {
+    padding-top: 42px;
+    padding-bottom: 38px;
+  }
+
+  .camp-details-section .coaching-grid {
+    gap: 24px;
+    padding-top: 26px;
+  }
+
+  .camp-details-copy h1 {
+    font-size: clamp(38px, 10.5vw, 48px);
+  }
+
+  .camp-details-copy > p {
+    margin: 16px 0 20px;
+    font-size: 15px;
+  }
+
+  .camp-details-copy > .camp-price {
+    margin: 8px 0 22px;
+    font-size: 18px;
+  }
+
+  .camp-details-section .feature-list li {
+    padding: 15px 0;
+  }
+
+  .camp-details-section .coach-panel {
+    padding: 22px;
+  }
+
+  .camp-details-section .camp-details-actions {
+    margin-top: 22px;
+  }
+
+  .about-section {
+    padding-top: 52px;
+    padding-bottom: 58px;
+  }
+
+  .about-section .coaching-grid {
+    padding-top: 30px;
+  }
+
+  .about-section .founder-profile {
+    gap: 14px;
+  }
+
+  .about-coaching {
+    padding-top: 20px;
+  }
+
+  .about-coaching h2 {
+    font-size: 25px;
+  }
+
+  .about-section .camp-details-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .about-section .camp-details-actions .button {
+    width: 100%;
+    min-height: 48px;
   }
 
   .coaching-grid {
