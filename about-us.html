@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=20261103-coach-tap-reveal">
+  <link rel="stylesheet" href="main.css?v=20261103-mobile-coach-tap">
   <link rel="icon" href="favicon.ico" sizes="any">
 </head>
 <body class="about-page">
@@ -110,7 +110,8 @@
       }
     });
 
-    if (window.matchMedia("(max-width: 680px)").matches) {
+    const coachTapMedia = window.matchMedia("(max-width: 680px), (hover: none) and (pointer: coarse)");
+    if (coachTapMedia.matches) {
       document.body.classList.add("has-coach-tap-reveal");
       document.querySelectorAll(".coach-photo").forEach((button) => {
         button.addEventListener("click", () => {

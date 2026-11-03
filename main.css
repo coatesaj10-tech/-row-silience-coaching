@@ -1018,6 +1018,18 @@ h2 em {
   }
 }
 
+@media (max-width: 680px), (hover: none) and (pointer: coarse) {
+  .about-page.has-coach-tap-reveal .coach-experience-copy,
+  .about-page.has-coach-tap-reveal .aj-profile-copy {
+    display: none;
+  }
+
+  .about-page.has-coach-tap-reveal .coach-experience.is-visible .coach-experience-copy,
+  .about-page.has-coach-tap-reveal .aj-profile.is-visible .aj-profile-copy {
+    display: flex;
+  }
+}
+
 .about-section .camp-details-actions .button {
   flex: 0 1 240px;
 }
@@ -1448,16 +1460,6 @@ h2 em {
 @media (max-width: 680px) {
   html {
     scroll-padding-top: 70px;
-  }
-
-  .about-page.has-coach-tap-reveal .coach-experience-copy,
-  .about-page.has-coach-tap-reveal .aj-profile-copy {
-    display: none;
-  }
-
-  .about-page.has-coach-tap-reveal .coach-experience.is-visible .coach-experience-copy,
-  .about-page.has-coach-tap-reveal .aj-profile.is-visible .aj-profile-copy {
-    display: flex;
   }
 
   .site-header {
