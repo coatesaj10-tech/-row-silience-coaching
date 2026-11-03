@@ -940,7 +940,16 @@ h2 em {
   outline-offset: 4px;
 }
 
-.about-section .coach-experience > img {
+.about-section .coach-photo {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.about-section .coach-photo > img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -970,13 +979,6 @@ h2 em {
   display: grid;
   isolation: isolate;
   outline-offset: 4px;
-}
-
-.about-section .aj-profile > img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
 }
 
 .about-section .aj-profile-copy {
@@ -1009,9 +1011,9 @@ h2 em {
   }
 
   .about-section .coach-experience:hover .coach-experience-copy,
-  .about-section .coach-experience:focus .coach-experience-copy,
+  .about-section .coach-experience:focus-within .coach-experience-copy,
   .about-section .aj-profile:hover .aj-profile-copy,
-  .about-section .aj-profile:focus .aj-profile-copy {
+  .about-section .aj-profile:focus-within .aj-profile-copy {
     opacity: 1;
   }
 }
@@ -1448,17 +1450,14 @@ h2 em {
     scroll-padding-top: 70px;
   }
 
-  .about-page.has-coach-scroll-reveal .coach-experience-copy,
-  .about-page.has-coach-scroll-reveal .aj-profile-copy {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity .35s ease, transform .35s ease;
+  .about-page.has-coach-tap-reveal .coach-experience-copy,
+  .about-page.has-coach-tap-reveal .aj-profile-copy {
+    display: none;
   }
 
-  .about-page.has-coach-scroll-reveal .coach-experience.is-visible .coach-experience-copy,
-  .about-page.has-coach-scroll-reveal .aj-profile.is-visible .aj-profile-copy {
-    opacity: 1;
-    transform: translateY(0);
+  .about-page.has-coach-tap-reveal .coach-experience.is-visible .coach-experience-copy,
+  .about-page.has-coach-tap-reveal .aj-profile.is-visible .aj-profile-copy {
+    display: flex;
   }
 
   .site-header {

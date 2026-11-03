@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css?v=20261103-aj-experience">
+  <link rel="stylesheet" href="main.css?v=20261103-coach-tap-reveal">
   <link rel="icon" href="favicon.ico" sizes="any">
 </head>
 <body class="about-page">
@@ -43,9 +43,11 @@
           <h2>Meet your coaches</h2>
           <ul class="feature-list founder-list">
             <li>
-              <div class="coach-experience" tabindex="0" role="group" aria-label="Holly Dunford's rowing experience. Scroll past the photo on mobile, or hover or focus to read more.">
-                <img src="holly-single-scull.jpg" alt="Holly Dunford rowing a single scull">
-                <div class="coach-experience-copy">
+              <div class="coach-experience">
+                <button class="coach-photo" type="button" aria-expanded="false" aria-controls="holly-experience" aria-label="Show Holly Dunford's rowing experience">
+                  <img src="holly-single-scull.jpg" alt="Holly Dunford rowing a single scull">
+                </button>
+                <div class="coach-experience-copy" id="holly-experience">
                   <strong>Holly Dunford</strong>
                   <p>Holly began her rowing journey at the age of 12 at Molesey Boat Club before earning a scholarship to row at the University of Washington.</p>
                   <p>Alongside her collegiate career, Holly continued to represent Great Britain internationally, achieving significant success at Under-23 level with a gold and silver medal respectively.</p>
@@ -55,9 +57,11 @@
               </div>
             </li>
             <li>
-              <div class="aj-profile" tabindex="0" role="group" aria-label="AJ Coates's rowing experience. Scroll past the photo on mobile, or hover or focus to read more.">
-                <img src="AJ-FISU-2026.jpg" alt="Four British rowers competing on the water">
-                <div class="aj-profile-copy">
+              <div class="aj-profile">
+                <button class="coach-photo" type="button" aria-expanded="false" aria-controls="aj-experience" aria-label="Show AJ Coates's rowing experience">
+                  <img src="AJ-FISU-2026.jpg" alt="Four British rowers competing on the water">
+                </button>
+                <div class="aj-profile-copy" id="aj-experience">
                   <strong>AJ Coates</strong>
                   <p>AJ began his rowing journey as a cox at St Peter’s School, York, aged 12, before transitioning to rowing himself. He continued his development at the University of York, where he served as Men’s Captain, taking responsibility for leading the programme, overseeing training plans, organising training camps and managing its day-to-day operations.</p>
                   <p>Following graduation, AJ joined Molesey Boat Club, where he continues to compete. During his time there, he has reached multiple Henley Royal Regatta semi-finals and most recently represented Great Britain at the FISU World University Championships, securing a silver medal.</p>
@@ -106,29 +110,14 @@
       }
     });
 
-    const coachExperienceMedia = window.matchMedia("(max-width: 680px)");
-    if ("IntersectionObserver" in window
-      && coachExperienceMedia.matches
-      && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      document.body.classList.add("has-coach-scroll-reveal");
-      const coachObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.dataset.photoSeen = "true";
-          } else if (entry.target.dataset.photoSeen === "true"
-            && entry.boundingClientRect.bottom <= (entry.rootBounds?.top ?? 0)) {
-            entry.target.closest(".coach-experience, .aj-profile").classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
+    if (window.matchMedia("(max-width: 680px)").matches) {
+      document.body.classList.add("has-coach-tap-reveal");
+      document.querySelectorAll(".coach-photo").forEach((button) => {
+        button.addEventListener("click", () => {
+          const isExpanded = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", String(!isExpanded));
+          button.closest(".coach-experience, .aj-profile").classList.toggle("is-visible", !isExpanded);
         });
-      });
-
-      document.querySelectorAll(".coach-experience > img, .aj-profile > img").forEach((photo) => {
-        if (photo.getBoundingClientRect().bottom <= 0) {
-          photo.closest(".coach-experience, .aj-profile").classList.add("is-visible");
-        } else {
-          coachObserver.observe(photo);
-        }
       });
     }
 
