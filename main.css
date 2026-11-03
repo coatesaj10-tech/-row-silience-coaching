@@ -604,6 +604,18 @@ h2 em {
   font-weight: 600;
 }
 
+.camp-card-body > .camp-price {
+  margin: 0 0 16px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.coaching-copy > .camp-price {
+  color: var(--deep-green);
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .camp-note {
   margin: 23px 0 0;
   color: rgba(228, 244, 252, .64);
