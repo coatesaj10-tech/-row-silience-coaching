@@ -610,6 +610,12 @@ h2 em {
   font-weight: 700;
 }
 
+.camp-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 .coaching-copy > .camp-price {
   color: var(--deep-green);
   font-size: 18px;
@@ -1157,6 +1163,14 @@ h2 em {
 
 .sticky-book-bar .button {
   width: min(100%, 360px);
+}
+
+.home-page main {
+  padding-bottom: calc(84px + env(safe-area-inset-bottom));
+}
+
+.home-book-bar .button {
+  width: min(100%, 520px);
 }
 
 .camp-terms-page main {
