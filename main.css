@@ -1187,6 +1187,21 @@ h2 em {
   text-align: center;
 }
 
+.home-book-bar {
+  align-items: center;
+}
+
+.home-book-bar .home-privacy-link {
+  position: absolute;
+  right: 5%;
+  bottom: calc(5px + env(safe-area-inset-bottom));
+  color: var(--deep-green);
+  font-size: 10px;
+  font-weight: 500;
+  text-underline-offset: .2em;
+  white-space: nowrap;
+}
+
 .home-book-bar .button span {
   font-size: 11px;
   font-weight: 400;
@@ -1598,6 +1613,11 @@ h2 em {
   font-size: 10px;
 }
 
+.privacy-policy-link {
+  color: #52666b;
+  font-size: 10px;
+}
+
 .back-to-top span {
   margin-left: 9px;
 }
@@ -1906,6 +1926,24 @@ h2 em {
     padding-left: 5%;
   }
 
+  .home-page main {
+    padding-bottom: calc(132px + env(safe-area-inset-bottom));
+  }
+
+  .home-book-bar {
+    flex-direction: column;
+    padding-top: 9px;
+    padding-bottom: calc(30px + env(safe-area-inset-bottom));
+  }
+
+  .home-book-bar .button {
+    min-height: 48px;
+  }
+
+  .home-book-bar .home-privacy-link {
+    font-size: 9px;
+  }
+
   .terms-agreement-bar form {
     flex-direction: column;
     align-items: stretch;
@@ -2158,6 +2196,12 @@ h2 em {
   .back-to-top {
     grid-column: 2;
     grid-row: 1;
+    align-self: center;
+  }
+
+  .privacy-policy-link {
+    grid-column: 1;
+    grid-row: 2;
     align-self: center;
   }
 
