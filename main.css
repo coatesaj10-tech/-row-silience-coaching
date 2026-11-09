@@ -1191,15 +1191,23 @@ h2 em {
   align-items: center;
 }
 
+.home-book-bar .home-cookie-link,
 .home-book-bar .home-privacy-link {
   position: absolute;
-  right: 5%;
   bottom: calc(5px + env(safe-area-inset-bottom));
   color: var(--deep-green);
   font-size: 10px;
   font-weight: 500;
   text-underline-offset: .2em;
   white-space: nowrap;
+}
+
+.home-book-bar .home-cookie-link {
+  left: 5%;
+}
+
+.home-book-bar .home-privacy-link {
+  right: 5%;
 }
 
 .home-book-bar .button span {
@@ -1940,6 +1948,7 @@ h2 em {
     min-height: 48px;
   }
 
+  .home-book-bar .home-cookie-link,
   .home-book-bar .home-privacy-link {
     font-size: 9px;
   }
