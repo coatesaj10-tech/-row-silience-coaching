@@ -912,6 +912,16 @@ h2 em {
   color: var(--forest);
 }
 
+.plan-status {
+  display: inline-block;
+  padding: 6px 10px;
+  background: #e4f4fc;
+  color: var(--deep-green);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 .available-plans-table td:last-child {
   white-space: nowrap;
 }
