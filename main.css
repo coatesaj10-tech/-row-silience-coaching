@@ -79,6 +79,18 @@ a:focus-visible {
   letter-spacing: -.07em;
 }
 
+.wordmark-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wordmark-hint {
+  color: #52666b;
+  font: 500 9px/1.2 var(--sans);
+  letter-spacing: 0;
+}
+
 .wordmark-mark {
   width: 31px;
   height: 31px;
@@ -577,11 +589,6 @@ h2 em {
   justify-content: space-between;
   color: rgba(228, 244, 252, .66);
   font-size: 7px;
-}
-
-.camp-card-top span:last-child {
-  color: var(--gold);
-  font-size: 13px;
 }
 
 .camp-card h3 {
@@ -1741,6 +1748,10 @@ h2 em {
     gap: 7px;
     font-size: clamp(16px, 5vw, 20px);
     white-space: nowrap;
+  }
+
+  .wordmark-hint {
+    font-size: 8px;
   }
 
   .site-header .wordmark-mark {
