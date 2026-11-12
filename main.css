@@ -1628,7 +1628,14 @@ h2 em {
   font-size: 10px;
 }
 
-.privacy-policy-link {
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.privacy-policy-link,
+.website-terms-link {
   color: #52666b;
   font-size: 10px;
 }
@@ -2219,10 +2226,16 @@ h2 em {
     align-self: center;
   }
 
-  .privacy-policy-link {
+  .footer-links,
+  .privacy-policy-link,
+  .website-terms-link {
     grid-column: 1;
     grid-row: 2;
     align-self: center;
+  }
+
+  .footer-links {
+    gap: 12px;
   }
 
   .copyright {
