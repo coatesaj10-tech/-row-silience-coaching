@@ -1183,7 +1183,7 @@ h2 em {
 }
 
 .home-page main {
-  padding-bottom: calc(150px + env(safe-area-inset-bottom));
+  padding-bottom: calc(190px + env(safe-area-inset-bottom));
 }
 
 .home-book-bar .button {
@@ -1647,13 +1647,61 @@ h2 em {
   background: var(--cream);
 }
 
+.home-footer {
+  min-height: 120px;
+  padding: 28px clamp(20px, 3vw, 48px);
+  background: rgba(189, 220, 234, .65);
+  border-top: 1px solid rgba(168, 177, 74, 0.7);
+}
+
 .footer-wordmark {
   font-size: 11px;
 }
 
-.footer-wordmark .wordmark-mark {
-  width: 23px;
-  height: 23px;
+.home-footer .footer-wordmark {
+  display: inline-flex;
+  min-width: 300px;
+  min-height: 78px;
+  padding: 18px 18px 18px 12px;
+  border: 2px solid rgba(168, 145, 52, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: clamp(18px, 2vw, 28px);
+  letter-spacing: -.06em;
+  line-height: 1;
+}
+
+.home-footer .footer-wordmark .wordmark-mark {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.home-footer .back-to-top,
+.home-footer .privacy-policy-link,
+.home-footer .website-terms-link,
+.home-footer .copyright {
+  color: var(--ink);
+  font-size: clamp(13px, 1.5vw, 18px);
+  font-weight: 500;
+}
+
+.home-footer .back-to-top {
+  margin-left: auto;
+  margin-right: 28px;
+  color: #1b2a2e;
+}
+
+.home-footer .footer-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2vw, 40px);
+}
+
+.home-footer .copyright {
+  margin-left: 24px;
+  color: #1c2d34;
+  font-size: clamp(12px, 1.2vw, 16px);
+  letter-spacing: .01em;
 }
 
 .site-footer > p {
