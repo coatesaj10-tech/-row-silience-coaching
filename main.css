@@ -1190,12 +1190,16 @@ h2 em {
 .home-book-bar {
   align-items: center;
   justify-content: center;
-  padding-top: 5px;
-  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
 }
 
 .home-book-bar .button {
   width: min(100%, 380px);
+  pointer-events: auto;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
@@ -2007,8 +2011,7 @@ h2 em {
 
   .home-book-bar {
     flex-direction: column;
-    padding-top: 9px;
-    padding-bottom: calc(30px + env(safe-area-inset-bottom));
+    padding: 0;
   }
 
   .home-book-bar .button {
@@ -2018,6 +2021,84 @@ h2 em {
   .home-book-bar .home-cookie-link,
   .home-book-bar .home-privacy-link {
     font-size: 9px;
+  }
+
+  .cookie-policy-page .camp-terms-content {
+    width: 90%;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .cookie-policy-page .camp-terms-content h1 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: clamp(40px, 11vw, 48px);
+  }
+
+  .cookie-policy-page .camp-terms-content .terms-updated {
+    margin-bottom: 24px;
+    font-size: 12px;
+  }
+
+  .cookie-policy-page .camp-terms-content > p,
+  .cookie-policy-page .camp-terms-content section > p,
+  .cookie-policy-page .camp-terms-content li,
+  .cookie-policy-page .camp-terms-content address {
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .cookie-policy-page .camp-terms-content section {
+    margin-top: 27px;
+  }
+
+  .cookie-policy-page .camp-terms-content section h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .cookie-policy-page .site-footer {
+    grid-template-columns: 1fr auto;
+    row-gap: 14px;
+  }
+
+  .cookie-policy-page .footer-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-wrap: wrap;
+  }
+
+  .cookie-policy-page .copyright {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .cookie-banner {
+    bottom: calc(96px + env(safe-area-inset-bottom));
+    padding: 0 4% 10px;
+  }
+
+  .cookie-banner-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .cookie-banner p {
+    font-size: 13px;
+  }
+
+  .cookie-actions {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .cookie-accept {
+    flex: 1;
+    min-height: 46px;
+    padding: 0 12px;
   }
 
   .terms-agreement-bar form {
