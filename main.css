@@ -1649,7 +1649,7 @@ h2 em {
 .cookie-banner {
   position: fixed;
   right: 0;
-  bottom: 84px;
+  bottom: calc(166px + env(safe-area-inset-bottom));
   left: 0;
   z-index: 20;
   display: none;
@@ -2075,7 +2075,7 @@ h2 em {
   }
 
   .cookie-banner {
-    bottom: calc(96px + env(safe-area-inset-bottom));
+    bottom: calc(166px + env(safe-area-inset-bottom));
     padding: 0 4% 10px;
   }
 
