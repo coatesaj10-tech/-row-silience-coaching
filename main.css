@@ -214,6 +214,9 @@ a:focus-visible {
 }
 
 .hero-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
   margin: 0 0 36px;
   color: var(--forest);
   font-size: 11px;
@@ -222,8 +225,13 @@ a:focus-visible {
 }
 
 .hero-eyebrow span {
-  margin: 0 4px;
+  white-space: nowrap;
+}
+
+.hero-eyebrow span + span::before {
+  margin-right: 12px;
   color: var(--moss);
+  content: "•";
 }
 
 h1,
@@ -1894,8 +1902,15 @@ h2 em {
   }
 
   .hero-eyebrow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
     margin-bottom: 27px;
     font-size: 9px;
+  }
+
+  .hero-eyebrow span + span::before {
+    margin: 0 8px 0 0;
   }
 
   .hero-copy {
