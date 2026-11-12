@@ -150,23 +150,34 @@
     <a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
     <div class="footer-links">
       <a class="privacy-policy-link" href="privacy-policy.html">Privacy Policy</a>
+      <a class="cookie-policy-link" href="cookie-policy.html">Cookie Policy</a>
       <a class="website-terms-link" href="website-terms.html">Terms &amp; Conditions</a>
     </div>
     <span class="copyright">© <span id="year"></span> Row-silience</span>
   </footer>
+
+  <div class="cookie-banner" id="cookie-banner" aria-live="polite">
+    <div class="cookie-banner-inner">
+      <p>We use essential cookies to keep this website functioning correctly. By continuing to use the site, you agree to the use of essential cookies.</p>
+      <div class="cookie-actions">
+        <a href="cookie-policy.html" class="cookie-link">Cookie Policy</a>
+        <button type="button" class="button cookie-accept">Accept essential cookies</button>
+      </div>
+    </div>
+  </div>
 
   <div class="sticky-book-bar home-book-bar">
     <a class="button" href="camp-terms.html">
       <strong>Book November Camp Now</strong>
       <span>25th–27th November · Eton Dorney</span>
     </a>
-    <a class="home-cookie-link" href="cookie-policy.html">Cookie Policy</a>
-    <a class="home-privacy-link" href="privacy-policy.html">Privacy Policy</a>
   </div>
 
   <script>
     const menuToggle = document.querySelector(".menu-toggle");
     const navigation = document.querySelector(".primary-navigation");
+    const cookieBanner = document.querySelector("#cookie-banner");
+    const acceptCookiesButton = document.querySelector(".cookie-accept");
 
     menuToggle.addEventListener("click", () => {
       const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
@@ -179,6 +190,17 @@
         menuToggle.setAttribute("aria-expanded", "false");
         navigation.classList.remove("is-open");
       }
+    });
+
+    const hasAcceptedCookies = localStorage.getItem("row-silience-cookie-consent") === "accepted";
+
+    if (!hasAcceptedCookies) {
+      cookieBanner.classList.add("is-visible");
+    }
+
+    acceptCookiesButton.addEventListener("click", () => {
+      localStorage.setItem("row-silience-cookie-consent", "accepted");
+      cookieBanner.classList.remove("is-visible");
     });
 
     document.querySelector("#year").textContent = new Date().getFullYear();
