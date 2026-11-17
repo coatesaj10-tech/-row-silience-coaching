@@ -770,6 +770,7 @@ h2 em {
   padding-top: 38px;
 }
 
+.club-coaching-intro h1,
 .club-coaching-intro h2 {
   margin: 0;
   color: var(--ink);
@@ -777,6 +778,7 @@ h2 em {
   letter-spacing: -.06em;
 }
 
+.club-coaching-intro h1 em,
 .club-coaching-intro h2 em {
   color: var(--forest);
   font-family: var(--serif);
@@ -803,6 +805,7 @@ h2 em {
   margin-top: 38px;
 }
 
+.club-coaching-content h2,
 .club-coaching-content h3 {
   margin: 0 0 16px;
   color: var(--ink);

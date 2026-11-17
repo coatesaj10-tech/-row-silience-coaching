@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e4f4fc">
+  <meta name="description" content="Bring Row-silience to your rowing club with tailored Masters coaching packages delivered at your club.">
+  <title>Club Coaching | Row-silience Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css?v=20261117-club-coaching-page">
+  <link rel="icon" href="favicon.ico" sizes="any">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="index.html#top" aria-label="Row-silience home">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span class="wordmark-copy">
+        <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+        <span class="wordmark-hint">Click the logo to return to the main page</span>
+      </span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menu</span>
+      <span class="menu-icon" aria-hidden="true">+</span>
+    </button>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="index.html#top">Main Page</a>
+      <a href="about-us.html">About Us</a>
+      <a href="index.html#training-plans">Training Plans</a>
+      <a href="index.html#camps">The Camps</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="training-section club-coaching-section" aria-labelledby="club-coaching-title">
+      <div class="section-wrap">
+        <div class="section-kicker"><span class="kicker-line"></span><span>CLUB COACHING · MASTERS PACKAGE</span></div>
+        <div class="club-coaching-intro">
+          <h1 id="club-coaching-title">Bring Row-silience<br><em>to your club.</em></h1>
+          <div>
+            <p>Looking to take your squad's performance to the next level? Row-silience offers tailored club coaching packages, delivered directly at your club.</p>
+            <p>We come to you to deliver practical, hands-on coaching, helping athletes improve their technique, develop as crews and get more out of their training.</p>
+            <p>You don't need the full package; on-water coaching can be booked on its own.</p>
+          </div>
+        </div>
+        <div class="club-coaching-content">
+          <section aria-labelledby="club-coaching-included">
+            <h2 id="club-coaching-included">What's included?</h2>
+            <ul class="club-coaching-list">
+              <li>
+                <strong>On-water coaching sessions</strong>
+                <p>Practical coaching at your club, focusing on rowing technique, boat handling, crew coordination and overall performance.</p>
+              </li>
+              <li>
+                <strong>Tailored training plan</strong>
+                <p>A structured training programme designed around your squad's level, goals and competition calendar.</p>
+              </li>
+              <li>
+                <strong>Performance development</strong>
+                <p>Guidance on improving individual and crew performance, developing consistency and building effective training habits.</p>
+              </li>
+              <li>
+                <strong>Club-specific approach</strong>
+                <p>Coaching adapted to your athletes, facilities, available equipment and club objectives.</p>
+              </li>
+            </ul>
+          </section>
+          <div class="club-coaching-followup">
+            <section aria-labelledby="club-coaching-process">
+              <h2 id="club-coaching-process">How does it work?</h2>
+              <p>We work with your club to understand your squad, current training structure and ambitions. From there, we develop a coaching package that combines on-water sessions with a tailored training plan to support continued development beyond our coaching visits.</p>
+            </section>
+            <section aria-labelledby="club-coaching-contact">
+              <h2 id="club-coaching-contact">Interested in bringing Row-silience to your club?</h2>
+              <p>Get in touch to discuss your squad, what you're looking to achieve and how we can build a package around your needs.</p>
+              <div class="club-coaching-actions">
+                <a class="button" href="mailto:coaches@row-silience.co.uk">Email us</a>
+                <a class="button" href="tel:+447342929561">Call 07342 929561</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark footer-wordmark" href="index.html#top">
+      <span class="wordmark-mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <path d="M5 7 28 30M12 5l19 19M4 16l16 16M21 4l11 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/>
+        </svg>
+      </span>
+      <span>ROW<span class="wordmark-dash">—</span>SILIENCE</span>
+    </a>
+    <a class="back-to-top" href="index.html#top">Back to main page <span aria-hidden="true">↑</span></a>
+    <div class="footer-links">
+      <a class="privacy-policy-link" href="privacy-policy.html">Privacy Policy</a>
+      <a class="cookie-policy-link" href="cookie-policy.html">Cookie Policy</a>
+      <a class="website-terms-link" href="website-terms.html">Terms &amp; Conditions</a>
+    </div>
+    <span class="copyright">© <span id="year"></span> Row-silience</span>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".primary-navigation");
+
+    menuToggle.addEventListener("click", () => {
+      const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+      navigation.classList.toggle("is-open", !isExpanded);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
